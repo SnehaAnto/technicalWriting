@@ -1,0 +1,108 @@
+\newcommand\BackgroundPicFrontPage{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/Front-Page-BG.pdf}%
+    \vfill
+}}}
+\AddToShipoutPictureBG*{\BackgroundPicFrontPage}
+
+\newgeometry{margin=1.98cm, top=1.15cm, bottom=1.47cm}
+\begin{titlepage}
+    % \latofont
+    \color{frontpagedark}
+    \vspace*{\baselineskip}
+
+    \ifthenelse{\equal{\SchoolOption}{estg}}{
+        \begin{figure}
+            \includegraphics[width=0.3\linewidth]{Figures/Theme/Logotypes/CU_logo.png}
+        \end{figure}
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esad}}{
+        \begin{figure}
+            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-B.pdf}
+        \end{figure}
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esslei}}{
+        \begin{figure}
+            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESSLEI-Logo-B.pdf}
+        \end{figure}
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{estm}}{
+        \begin{figure}
+            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTM-Logo-B.pdf}
+        \end{figure}
+    }
+    
+    \ifthenelse{\equal{\SchoolOption}{esecs}}{
+        \begin{figure}
+            \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESECS-Logo-B.pdf}
+        \end{figure}
+    }
+
+    % Title.
+	\noindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-2.5cm\relax}{
+            \setstretch{1.03}
+            \raggedright\bfseries\Huge\selectfont\GetTitle
+        }
+    }
+
+    \vspace{0.8\baselineskip}
+
+    % Subtitle.
+    \noindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-7cm\relax}{
+            \setstretch{1.03}
+            \raggedright\fontsize{14}{19}\selectfont\GetSubtitle
+        }
+    }
+
+    % cover img
+    \noindent
+        \makebox[0pt][l]{\hspace{-2cm}\includegraphics[width=0.9\textwidth]{Figures/Theme/front.png}}
+
+    \vspace{35pt}
+
+    % Author.
+    {\noindent\bfseries\Large\selectfont\GetFirstAuthor}
+
+    \vspace{30pt}    
+    
+    \vfill
+	
+    % School.
+	{\noindent\fontsize{10}{12}\selectfont\GetSchool}
+	
+    % Department.
+	% {\noindent\fontsize{10}{12}\selectfont\GetDepartment}
+
+    % Degree.
+	{\noindent\fontsize{10}{12}\selectfont\GetDegree}
+
+    % Course.
+    \ifdefined\GetCourse
+        {\noindent\fontsize{12}{12}\selectfont\GetCourse}
+	\fi
+
+    \vspace{45pt}
+
+    % Thesis option.
+	{\noindent\fontsize{10}{12}\itshape\selectfont\GetThesisType}
+
+    \vspace{45pt}
+
+    % Local and date.
+	{\noindent\fontsize{10}{12}\selectfont\GetDate}
+
+    \vspace{68pt}
+
+\end{titlepage}
+\restoregeometry
+\MediaOptionLogicBlank

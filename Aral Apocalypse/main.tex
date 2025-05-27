@@ -1,0 +1,84 @@
+%%% Document Options %%%
+\documentclass[
+    report,
+    language=english,
+    school=estg,
+    docstage=final,
+    media=a4,
+    linkcolor=blue!45!black,
+    chapterstyle=classic,
+    coverstyle=modern
+]{config} % Refer to the Wiki for a list of available options.
+\usepackage{hyperref}
+
+\titlespacing*{\section}{5pt}{*0}{0pt}
+\titlespacing*{\chapter}{0pt}{*0}{12pt}
+
+%%% Document Version %%%
+\DocumentVersion{1.0.0} % This is required only if the 'docstage' is set to 'working'.
+
+%%% Document Metadata %%%
+\input{Metadata/Metadata}
+
+\begin{document}
+
+\renewcommand{\chapterautorefname}{Annexure}
+
+%%% Front Matter %%%
+\include{Matter/00-Cover}
+\include{Matter/01-Front-Page}
+
+%%% Roman Numeration %%%
+\pagenumbering{roman}
+
+%%% Double-space content
+\doublespacing
+
+
+%%% Abstract %%%
+\include{Chapters/00-Abstract}
+
+%%% Table of Contents, List of Figures and List of Tables %%%
+
+\begin{singlespacing}
+    \bookmarktocentry\tableofcontents
+    \listoffigures
+\end{singlespacing}
+
+%%% Arabic Numeration %%%
+\pagenumbering{arabic}
+
+%%% Chapters (**Insert Yours Here**) %%%
+\include{Chapters/01-Introduction}
+\include{Chapters/02}
+\include{Chapters/03}
+\include{Chapters/04}
+\include{Chapters/05}
+\include{Chapters/06}
+\include{Chapters/07}
+\include{Chapters/08}
+\include{Chapters/09}
+\include{Chapters/10}
+
+%%% Bibliography %%%
+\renewcommand{\refname}{References}
+\begin{singlespacing}
+    \printbibliography[title={\refname},heading=bibintoc]
+\end{singlespacing}
+
+%%% Annexure
+\input{Matter/07-Annexes}
+\input{Chapters/Annexures/aral-now}
+\input{Chapters/Annexures/aral-fish}
+\input{Chapters/Annexures/migratory}
+\input{Chapters/Annexures/fishing-in-aral}
+\input{Chapters/Annexures/moynaq}
+\input{Chapters/Annexures/invasive}
+\input{Chapters/Annexures/ballast}
+\input{Chapters/Annexures/lakes}
+
+%%% Back Page %%%
+\input{Matter/08-Back-Page}
+
+
+\end{document}
